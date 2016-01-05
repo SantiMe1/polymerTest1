@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Prueba</title>
+	<script src="bower_components/webcomponentsjs/webcomponents.js"></script>
+	<link rel="import" href="bower_components/polymer/polymer.html">
+	<link rel="import" href="bower_components/iron-icons/iron-icons.html">
+	<link rel="import" href="bower_components/paper-toolbar/paper-toolbar.html">
+	<link rel="import" href="bower_components/paper-icon-button/paper-icon-button.html">
+	<link rel="import" href="bower_components/paper-drawer-panel/paper-drawer-panel.html">
+	<link rel="import" href="bower_components/paper-fab/paper-fab.html">
+	<link rel="import" href="bower_components/paper-styles/paper-styles.html">
+	<link rel="import" href="bower_components/custom-card/custom-card.html">
+	<style is="custom-style">
+		body{
+			width: 100%;
+			padding: 0;
+			margin: 0;
+		}
+		paper-toolbar.main{
+			background: var(--paper-green-a700);
+		}
+		paper-toolbar.drawer{
+			background: var(--paper-green-500);
+		}
+	</style>
+</head>
+<body>
+	
+	<!--Segundo Ejemplo -->
+	<paper-drawer-panel>
+		<div drawer>
+			<paper-toolbar class="drawer">
+				<span>Menu</span>
+			</paper-toolbar>
+		</div>
+		<div main>
+			<paper-toolbar class="main">
+				<paper-icon-button paper-drawer-toggle icon="menu"></paper-icon-button>
+				<span title class="title">Mi primera app</span>
+				<paper-icon-button icon="refresh"></paper-icon-button>
+			</paper-toolbar>
+			<h4>Custom Card</h4>
+			<custom-card edad="23"></custom-card>
+
+		</div>
+	</paper-drawer-panel>
+</body>
+</html>
