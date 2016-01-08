@@ -2,32 +2,47 @@
 <html>
 <head>
 	<title>Prueba</title>
+
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
+	<!-- Scripts -->
 	<script src="bower_components/webcomponentsjs/webcomponents.js"></script>
+	<!--Polymer Imports-->
 	<link rel="import" href="bower_components/polymer/polymer.html">
 	<link rel="import" href="bower_components/iron-icons/iron-icons.html">
+	<link rel="import" href="bower_components/iron-icon/iron-icon.html">
 	<link rel="import" href="bower_components/paper-toolbar/paper-toolbar.html">
 	<link rel="import" href="bower_components/paper-icon-button/paper-icon-button.html">
 	<link rel="import" href="bower_components/paper-drawer-panel/paper-drawer-panel.html">
 	<link rel="import" href="bower_components/paper-fab/paper-fab.html">
 	<link rel="import" href="bower_components/paper-styles/paper-styles.html">
 	<link rel="import" href="bower_components/custom-card/custom-card.html">
-	<style is="custom-style">
-		body{
-			width: 100%;
-			padding: 0;
-			margin: 0;
-		}
-		paper-toolbar.main{
-			background: var(--paper-green-a700);
-		}
-		paper-toolbar.drawer{
-			background: var(--paper-green-500);
-		}
-	</style>
+	<link rel="import" href="bower_components/iron-flex-layout/iron-flex-layout.html">
+	<link rel="import" href="kong_components/issues-list/issues-list.html">
+
 </head>
+ <style is="custom-style">
+    body {
+      @apply(--layout-fullbleed);
+    }
+    list-demo {
+      @apply(--layout-fit);
+    }
+  </style>
+  <body class="fullbleed relative">    
+		<issues-list class="fit"></issues-list>
+
+		<!--
+		<hr>
+
+		<h4>Custom Card</h4>
+		<custom-card></custom-card>
+		-->
+  </body>
+  <!--
 <body>
 	
-	<!--Segundo Ejemplo -->
 	<paper-drawer-panel>
 		<div drawer>
 			<paper-toolbar class="drawer">
@@ -40,10 +55,13 @@
 				<span title class="title">Mi primera app</span>
 				<paper-icon-button icon="refresh"></paper-icon-button>
 			</paper-toolbar>
-			<h4>Custom Card</h4>
-			<custom-card edad="23"></custom-card>
-
+			
+			<hr>
+			
 		</div>
+
 	</paper-drawer-panel>
+	
 </body>
+-->
 </html>

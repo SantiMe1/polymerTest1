@@ -1,3 +1,4 @@
+<!--
 <dom-module id="custom-card">
 	<link rel="stylesheet" type="text/css" href="custom-card.css">
 	<template>
@@ -6,6 +7,46 @@
 		<span>{{edad}}</span>
 	</div>
 	</template>
+
+	 <template is="dom-repeat" items="{{employees}}" as="employee">
+        <div>{{employee.lastname}}, {{employee.firstname}}</div>
+    </template>
+
 </dom-module>
 
-<script src="custom-card.js"></script>
+
+-->
+<dom-module id="custom-card">
+  
+	<template>
+	<div>
+		<span>{{nombre}}</span>
+		<span>{{edad}}</span>
+	</div>
+
+		 <template is="dom-repeat" items="{{employees}}" >
+	        <div>{{employee.lastname}}, {{employee.firstname}}</div>
+	    </template>
+		
+		<template is="dom-repeat" items="{{employees}}" as="employee">
+	        <div>{{employee.lastname}}, {{employee.firstname}}</div>
+	    </template>
+	    
+	    <template is="dom-repeat" items="{{employees}}" as="employee">
+        
+          <paper-item>
+            <paper-item-body two-line>
+              <div>{{employee.lastname}}</div>
+              <div secondary>{{employee.firstname}}</div>
+            </paper-item-body>
+            <iron-icon icon="info"></iron-icon>
+          </paper-item>
+
+        </template>
+
+	</template>
+  	<link rel="import" href="../../bower_components/paper-item/paper-item.html">
+	<link rel="import" href="../../bower_components/paper-item/paper-item-body.html">
+  	<script src="custom-card.js"></script>
+  	
+</dom-module>
