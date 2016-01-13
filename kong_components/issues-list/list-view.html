@@ -56,7 +56,13 @@
       Polymer.NeonAnimatableBehavior
     ],
     listeners: {
-      'click': '_onClick'
+      'click': '_onClick',
+      'setItemDetails': '_setItemDetails'
+    },
+    _setItemDetails: function(e) {
+      // the parent makes the child fire an event
+      var fullView = Polymer.dom(this.root).querySelector('full-view');
+      fullView.fire('setItemDetails', e.detail);
     },
     properties: {
       data: {
@@ -98,6 +104,10 @@
         item: target,
       });
       console.log("ItemSeleccionado: ",target);
+
+      this.fire('setItemDetails', {
+        message: 'Binding!!'
+      });
     },
     itemSelected: function (e) {
         //console.log(e.currentTarget.getAttribute('itemData'));

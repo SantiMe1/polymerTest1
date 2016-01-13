@@ -41,7 +41,7 @@
     <div id="main" class="main">
       <div class="image-container">
         <div class="image">
-        Hola
+          {{mensaje}}
         </div>
       </div>
     </div>
@@ -52,10 +52,18 @@
 <script>
   Polymer({
     is: 'full-view',
+    listeners: {
+      'setItemDetails': '_ssetItemDetails'
+    },
+    _handleEventTwo: function(e) {
+      console.log( e.detail.message );
+      this.message = e.detail.message;
+    },
     behaviors: [
       Polymer.NeonAnimatableBehavior
     ],
     properties: {
+      message: String,
       sharedElements: {
         type: Object,
         value: function() {
